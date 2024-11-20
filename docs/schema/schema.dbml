@@ -1,0 +1,35 @@
+Table dim_Respondent {
+  respondent_id UUID pk
+  gender VARCHAR
+  age INTEGER
+  education VARCHAR
+  income_quintile VARCHAR
+  employed BOOLEAN
+}
+
+Table dim_Question {
+  question_id INTEGER pk
+  description VARCHAR
+  valid_values LIST
+}
+
+Table dim_Economy {
+  economy_id UUID pk
+  economy_code VARCHAR
+  economy VARCHAR
+  region VARCHAR
+  pop_adult VARCHAR
+}
+
+Table fact_Response {
+  response_id UUID pk
+  respondent_id UUID
+  question_id UUID
+  economy_id UUID
+  value VARCHAR
+}
+
+
+Ref: dim_Respondent.respondent_id < fact_Response.respondent_id
+Ref: dim_Question.question_id < fact_Response.question_id
+Ref: dim_Economy.economy_id < fact_Response.economy_id
