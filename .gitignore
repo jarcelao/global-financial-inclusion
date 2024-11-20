@@ -8,3 +8,12 @@ wheels/
 
 # Virtual environments
 .venv
+
+# dbt files
+target/
+dbt_packages/
+logs/
+
+# raw data
+*.duckdb
+*.csv
