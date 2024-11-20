@@ -10,7 +10,6 @@ Table dim_Respondent {
 Table dim_Question {
   question_id INTEGER pk
   description VARCHAR
-  valid_values LIST
 }
 
 Table dim_Economy {
