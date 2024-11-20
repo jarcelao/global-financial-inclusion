@@ -1,0 +1,257 @@
+models:
+  - name: stg_raw__global_findex
+    description: >
+      Staging data from the World Bank's Findex dataset for 2021 (see source for column descriptions)
+    columns:
+      - name: economy
+        data_type: varchar
+      - name: economycode
+        data_type: varchar
+      - name: regionwb
+        data_type: varchar
+      - name: pop_adult
+        data_type: double
+      - name: age
+        data_type: bigint
+      - name: educ
+        data_type: bigint
+      - name: inc_q
+        data_type: bigint
+      - name: emp_in
+        data_type: bigint
+      - name: urbanicity_f2f
+        data_type: bigint
+      - name: account
+        data_type: bigint
+      - name: account_fin
+        data_type: bigint
+      - name: account_mob
+        data_type: bigint
+      - name: fin1_1a
+        data_type: bigint
+      - name: fin1_1b
+        data_type: bigint
+      - name: fin2
+        data_type: bigint
+      - name: fin4
+        data_type: bigint
+      - name: fin4a
+        data_type: bigint
+      - name: fin5
+        data_type: bigint
+      - name: fin6
+        data_type: bigint
+      - name: fin7
+        data_type: bigint
+      - name: fin8
+        data_type: bigint
+      - name: fin8a
+        data_type: bigint
+      - name: fin8b
+        data_type: bigint
+      - name: fin9
+        data_type: bigint
+      - name: fin9a
+        data_type: bigint
+      - name: fin10
+        data_type: bigint
+      - name: fin10_1a
+        data_type: varchar
+      - name: fin10_1b
+        data_type: varchar
+      - name: fin10_1c
+        data_type: varchar
+      - name: fin10_1d
+        data_type: varchar
+      - name: fin10_1e
+        data_type: varchar
+      - name: fin10a
+        data_type: bigint
+      - name: fin10b
+        data_type: bigint
+      - name: fin11_1
+        data_type: bigint
+      - name: fin11a
+        data_type: bigint
+      - name: fin11b
+        data_type: bigint
+      - name: fin11c
+        data_type: bigint
+      - name: fin11d
+        data_type: bigint
+      - name: fin11e
+        data_type: bigint
+      - name: fin11f
+        data_type: bigint
+      - name: fin11g
+        data_type: bigint
+      - name: fin11h
+        data_type: bigint
+      - name: fin13_1a
+        data_type: bigint
+      - name: fin13_1b
+        data_type: bigint
+      - name: fin13_1c
+        data_type: bigint
+      - name: fin13_1d
+        data_type: bigint
+      - name: fin13_1e
+        data_type: bigint
+      - name: fin13_1f
+        data_type: bigint
+      - name: fin13a
+        data_type: bigint
+      - name: fin13b
+        data_type: bigint
+      - name: fin13c
+        data_type: bigint
+      - name: fin13d
+        data_type: bigint
+      - name: fin14_1
+        data_type: bigint
+      - name: fin14_2
+        data_type: bigint
+      - name: fin14_2_china
+        data_type: varchar
+      - name: fin14a
+        data_type: bigint
+      - name: fin14a1
+        data_type: bigint
+      - name: fin14b
+        data_type: bigint
+      - name: fin14c
+        data_type: bigint
+      - name: fin14c_2
+        data_type: bigint
+      - name: fin14c_2_china
+        data_type: varchar
+      - name: fin16
+        data_type: bigint
+      - name: fin17a
+        data_type: bigint
+      - name: fin17a1
+        data_type: bigint
+      - name: fin17b
+        data_type: bigint
+      - name: fin20
+        data_type: bigint
+      - name: fin22a
+        data_type: bigint
+      - name: fin22b
+        data_type: bigint
+      - name: fin22c
+        data_type: bigint
+      - name: fin24
+        data_type: bigint
+      - name: fin24a
+        data_type: bigint
+      - name: fin24b
+        data_type: bigint
+      - name: fin26
+        data_type: bigint
+      - name: fin27_1
+        data_type: bigint
+      - name: fin27c1
+        data_type: bigint
+      - name: fin27c2
+        data_type: bigint
+      - name: fin28
+        data_type: bigint
+      - name: fin29_1
+        data_type: bigint
+      - name: fin29c1
+        data_type: bigint
+      - name: fin29c2
+        data_type: bigint
+      - name: fin30
+        data_type: bigint
+      - name: fin31a
+        data_type: bigint
+      - name: fin31b
+        data_type: bigint
+      - name: fin31b1
+        data_type: bigint
+      - name: fin31b1_china
+        data_type: varchar
+      - name: fin31c
+        data_type: bigint
+      - name: fin32
+        data_type: bigint
+      - name: fin33
+        data_type: bigint
+      - name: fin34a
+        data_type: bigint
+      - name: fin34b
+        data_type: bigint
+      - name: fin34d
+        data_type: bigint
+      - name: fin34e
+        data_type: bigint
+      - name: fin35
+        data_type: bigint
+      - name: fin37
+        data_type: bigint
+      - name: fin38
+        data_type: bigint
+      - name: fin39a
+        data_type: bigint
+      - name: fin39b
+        data_type: bigint
+      - name: fin39d
+        data_type: bigint
+      - name: fin39e
+        data_type: bigint
+      - name: fin42
+        data_type: bigint
+      - name: fin42a
+        data_type: bigint
+      - name: fin43a
+        data_type: bigint
+      - name: fin43b
+        data_type: bigint
+      - name: fin43d
+        data_type: bigint
+      - name: fin43e
+        data_type: bigint
+      - name: fin44a
+        data_type: bigint
+      - name: fin44b
+        data_type: bigint
+      - name: fin44c
+        data_type: bigint
+      - name: fin44d
+        data_type: bigint
+      - name: fin45
+        data_type: bigint
+      - name: fin45_1
+        data_type: bigint
+      - name: fin45_1_china
+        data_type: varchar
+      - name: saved
+        data_type: bigint
+      - name: borrowed
+        data_type: bigint
+      - name: receive_wages
+        data_type: bigint
+      - name: receive_transfers
+        data_type: bigint
+      - name: receive_pension
+        data_type: bigint
+      - name: receive_agriculture
+        data_type: bigint
+      - name: pay_utilities
+        data_type: bigint
+      - name: remittances
+        data_type: bigint
+      - name: mobileowner
+        data_type: bigint
+      - name: internetaccess
+        data_type: bigint
+      - name: anydigpayment
+        data_type: bigint
+      - name: merchantpay_dig
+        data_type: bigint
+      - name: year
+        data_type: bigint
+      - name: gender
+        data_type: varchar

@@ -1,0 +1,392 @@
+sources:
+  - name: raw
+    description: >
+      Data extracted from the raw data directory
+    meta:
+      external_location: "../data/raw/{name}.csv"
+    tables:
+      - name: micro_world_139countries
+        description: >
+          Raw data from the World Bank's Findex dataset for 2021
+        columns:
+          - name: economy
+            description: >
+              Economy
+          - name: economycode
+            description: >
+              Economy Code
+          - name: regionwb
+            description: >
+              Regional code
+          - name: pop_adult
+            description: >
+              Population 15+, 2020, WDI
+          - name: wpid_random
+            description: >
+              Gallup World Poll identifier
+          - name: wgt
+            description: >
+              Weight
+          - name: female
+            description: >
+              Respondent is female
+          - name: age
+            description: >
+              Respondent age
+          - name: educ
+            description: >
+              Respondent education level
+          - name: inc_q
+            description: >
+              Within-economy household income quintile
+          - name: emp_in
+            description: >
+              Respondent is in workforce
+          - name: urbancity_f2f
+            description: >
+              Respondent lives in rural area
+          - name: account
+            description: >
+              Has an account
+          - name: account_fin
+            description: >
+              Has an account at a financial institution
+          - name: account_mob
+            description: >
+              Has a mobile money account
+          - name: fin1_1a
+            description: >
+              Opened first account to receive a wage payment
+          - name: fin1_1b
+            description: >
+              Opened first account to receive money from the government
+          - name: fin2
+            description: >
+              Has a debit card
+          - name: fin4
+            description: >
+              Used a debit card
+          - name: fin4a
+            description: >
+              Used a debit card in-store
+          - name: fin5
+            description: >
+              Used a mobile phone or internet to access account
+          - name: fin6
+            description: >
+              Used a mobile phone or internet to check account balance
+          - name: fin7
+            description: >
+              Has a credit card
+          - name: fin8
+            description: >
+              Used a credit card
+          - name: fin8a
+            description: >
+              Used a credit card in-store
+          - name: fin8b
+            description: >
+              Paid credit card balances in full
+          - name: fin9
+            description: >
+              Made any deposit into the account
+          - name: fin9a
+            description: >
+              Make deposits into the account two or more times per month
+          - name: fin10
+            description: >
+              Withdrew from the account
+          - name: fin10_1a
+            description: >
+              Reason for inactive account: too far
+          - name: fin10_1b
+            description: >
+              Reason for inactive account: no need
+          - name: fin10_1c
+            description: >
+              Reason for inactive account: lack money
+          - name: fin10_1d
+            description: >
+              Reason for inactive account: not comfortable using it
+          - name: fin10_1e
+            description: >
+              Reason for inactive account: lack trust
+          - name: fin10a
+            description: >
+              Withdrew from the account more than two times per month
+          - name: fin10b
+            description: >
+              Used account to store money
+          - name: fin11_1
+            description: >
+              Unbanked: use account without help
+          - name: fin11a
+            description: >
+              Reason for no account: too far
+          - name: fin11b
+            description: >
+              Reason for no account: too expensive
+          - name: fin11c
+            description: >
+              Reason for no account: lack documentation
+          - name: fin11d
+            description: >
+              Reason for no account: lack trust
+          - name: fin11e
+            description: >
+              Reason for no account: religious reasons
+          - name: fin11f
+            description: >
+              Reason for no account: lack money
+          - name: fin11g
+            description: >
+              Reason for no account: family member already has one
+          - name: fin11h
+            description: >
+              Reason for no account: no need for financial services
+          - name: fin13_1a
+            description: >
+              Reason for no mobile money account: too far
+          - name: fin13_1b
+            description: >
+              Reason for no mobile money account: too expensive
+          - name: fin13_1c
+            description: >
+              Reason for no mobile money account: lack documentation
+          - name: fin13_1d
+            description: >
+              Reason for no mobile money account: lack of money
+          - name: fin13_1e
+            description: >
+              Reason for no mobile money account: use agent
+          - name: fin13_1f
+            description: >
+              Reason for no mobile money account: no mobile phone
+          - name: fin13a
+            description: >
+              Use mobile money account two or more times a month
+          - name: fin13b
+            description: >
+              Use mobile money account to store money
+          - name: fin13c
+            description: >
+              Use mobile money account to borrow money
+          - name: fin13d
+            description: >
+              Use mobile money account without help
+          - name: fin14_1
+            description: >
+              Use a mobile phone to pay for a purchase in-store
+          - name: fin14_2
+            description: >
+              Paid digitally for an in-store purchase for the first time after COVID-19
+          - name: fin14_2_China
+            description: >
+              Paid digitally for an in-store purchase for the first time since 2020
+          - name: fin14a
+            description: >
+              Made bill payments online using the Internet
+          - name: fin14a1
+            description: >
+              Send money to a relative or friend online using the Internet
+          - name: fin14b
+            description: >
+              Bought something online using the Internet
+          - name: fin14c
+            description: >
+              Paid online or in cash at delivery
+          - name: fin14c_2
+            description: >
+              Paid online for an online purchase for the first time after COVID-19
+          - name: fin14c_2_China
+            description: >
+              Paid online for an online purchase for the first time since 2020
+          - name: fin16
+            description: >
+              Saved for old age
+          - name: fin17a
+            description: >
+              Saved using an account at a financial institution
+          - name: fin17b
+            description: >
+              Saved using an informal savings club
+          - name: fin20
+            description: >
+              Borrowed for medical purposes
+          - name: fin22a
+            description: >
+              Borrowed from a financial institution
+          - name: fin22b
+            description: >
+              Borrowed from family or friends
+          - name: fin22c
+            description: >
+              Borrowed from an informal savings club
+          - name: fin24
+            description: >
+              Main source of emergency funds in 30 days
+          - name: fin24a
+            description: >
+              Difficulty of emergency funds in 30 days
+          - name: fin24b
+            description: >
+              Difficulty of emergency funds in 7 days
+          - name: fin26
+            description: >
+              Sent domestic remittances
+          - name: fin27_1
+            description: >
+              Sent domestic remittances through an account
+          - name: fin27c1
+            description: >
+              Sent domestic remittances in cash
+          - name: fin27c2
+            description: >
+              Sent domestic remittances through an MTO
+          - name: fin28
+            description: >
+              Received domestic remittances
+          - name: fin29_1
+            description: >
+              Received domestic remittances through an account
+          - name: fin29c1
+            description: >
+              Sent domestic remittances in cash
+          - name: fin29c2
+            description: >
+              Sent domestic remittances through an MTO
+          - name: fin30
+            description: >
+              Paid a utility bill
+          - name: fin31a
+            description: >
+              Paid a utility bill using an account
+          - name: fin31b
+            description: >
+              Paid a utility bill using a mobile phone
+          - name: fin31b1
+            description: >
+              Paid a utility bill from an account or mobile phone for the first time after COVID-19
+          - name: fin31b1_China
+            description: >
+              Paid a utility bill from an account or mobile phone for the first time since 2020
+          - name: fin31c
+            description: >
+              Paid a utility bill in cash
+          - name: fin32
+            description: >
+              Received wage payments
+          - name: fin33
+            description: >
+              Received public sector wage payments
+          - name: fin34a
+            description: >
+              Received wage payments into an account
+          - name: fin34b
+            description: >
+              Received wage payments to a mobile phone
+          - name: fin34d
+            description: >
+              Received wage payments in cash
+          - name: fin34e
+            description: >
+              Recieved wage payments to a card
+          - name: fin35
+            description: >
+              Received wage payments into an account or to a phone or a card and paid higher than expected bank fees
+          - name: fin37
+            description: >
+              Received a government transfer
+          - name: fin38
+            description: >
+              Received a government pension
+          - name: fin39a
+            description: >
+              Received a government transfer or pension into an account
+          - name: fin39b
+            description: >
+              Received a government transfer or pension to a mobile phone
+          - name: fin39d
+            description: >
+              Received a government transfer or pension in cash
+          - name: fin39e
+            description: >
+              Received a government transfer or pension to a card
+          - name: fin42
+            description: >
+              Received an agricultural payment
+          - name: fin42a
+            description: >
+              Grow own crops or raise livestock
+          - name: fin43a
+            description: >
+              Received an agricultural payment into an account
+          - name: fin43b
+            description: >
+              Received an agricultural payment to a mobile phone
+          - name: fin43d
+            description: >
+              Received an agricultural payment in cash
+          - name: fin43e
+            description: >
+              Received an agricultural payment to a card
+          - name: fin44a
+            description: >
+              Financially worried: old age
+          - name: fin44b
+            description: >
+              Financially worried: medical cost
+          - name: fin44c
+            description: >
+              Financially worried: bills
+          - name: fin44d
+            description: >
+              Financially worried: education
+          - name: fin45
+            description: >
+              Financially most worried
+          - name: fin45_1
+            description: >
+              Financially worried due to COVID-19
+          - name: fin45_1_China
+            description: >
+              Financial worry
+          - name: saved
+            description: >
+              Saved in the past year
+          - name: borrowed
+            description: >
+              Borrowed in the past year
+          - name: receive_wages
+            description: >
+              Received a wage payment
+          - name: receive_transfers
+            description: >
+              Received a government transfer payment
+          - name: receive_pension
+            description: >
+              Received a government pension payment
+          - name: receive_agriculture
+            description: >
+              Received a payment for the sale of agricultural goods
+          - name: pay_utilities
+            description: >
+              Paid a utility bill
+          - name: remittances
+            description: >
+              Made or received a domestic remittance payment
+          - name: mobileowner
+            description: >
+              Owns a mobile phone
+          - name: internetaccess
+            description: >
+              Internet access
+          - name: anydigpayment
+            description: >
+              Made or received a digital payment
+          - name: merchantpay_dig
+            description: >
+              Made a digital merchant payment
+          - name: year
+            description: >
+              Year
