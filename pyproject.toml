@@ -1,7 +1,9 @@
 [project]
 name = "global-financial-inclusion"
-version = "0.1.0"
-description = "Add your description here"
+version = "1.0.0"
+description = "Pipeline to process the World Bank's Global Findex Database for 2021."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "dbt-duckdb>=1.9.0",
+]
