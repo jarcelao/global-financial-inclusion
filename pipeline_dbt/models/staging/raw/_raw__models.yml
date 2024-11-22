@@ -315,7 +315,7 @@ models:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 1
               max_value: 4
-      - name: fin14_2_China
+      - name: fin14_2_china
         data_type: bigint
         data_tests:
           - dbt_expectations.expect_column_values_to_be_between:
@@ -351,7 +351,7 @@ models:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 1
               max_value: 4
-      - name: fin14c_2_China
+      - name: fin14c_2_china
         data_type: bigint
         data_tests:
           - dbt_expectations.expect_column_values_to_be_between:
@@ -495,7 +495,7 @@ models:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 1
               max_value: 4
-      - name: fin31b1_China
+      - name: fin31b1_china
         data_type: bigint
         data_tests:
           - dbt_expectations.expect_column_values_to_be_between:
@@ -657,7 +657,7 @@ models:
           - dbt_expectations.expect_column_values_to_be_between:
               min_value: 1
               max_value: 5
-      - name: fin45_1_China
+      - name: fin45_1_china
         data_type: bigint
         data_tests:
           - dbt_expectations.expect_column_values_to_be_between:

@@ -2,12 +2,12 @@ sources:
   - name: raw
     description: >
       Data extracted from the raw data directory
-    meta:
-      external_location: "../data/raw/{name}.csv"
     tables:
       - name: micro_world_139countries
         description: >
           Raw data from the World Bank's Findex dataset for 2021
+        config:
+          external_location: "read_csv('../data/raw/micro_world_139countries.csv', ignore_errors=True)"
         columns:
           - name: economy
             description: >
