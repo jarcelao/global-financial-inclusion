@@ -2,256 +2,737 @@ models:
   - name: stg_raw__global_findex
     description: >
       Staging data from the World Bank's Findex dataset for 2021 (see source for column descriptions)
+    config:
+      contract:
+        enforced: true
     columns:
       - name: economy
         data_type: varchar
       - name: economycode
         data_type: varchar
+        data_tests:
+          - dbt_expectations.expect_column_value_lengths_to_equal:
+              value: 3
       - name: regionwb
         data_type: varchar
       - name: pop_adult
         data_type: double
+      - name: wgt
+        data_type: double
+      - name: female
+        data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
       - name: age
         data_type: bigint
       - name: educ
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: inc_q
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: emp_in
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
       - name: urbanicity_f2f
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [1, 2]
       - name: account
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: account_fin
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: account_mob
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: fin1_1a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin1_1b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin2
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin4
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin4a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin5
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin6
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin7
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin8
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin8a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin8b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin9
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin9a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10_1a
-        data_type: varchar
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10_1b
-        data_type: varchar
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10_1c
-        data_type: varchar
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10_1d
-        data_type: varchar
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10_1e
-        data_type: varchar
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin10b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11_1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11e
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11f
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11g
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin11h
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1e
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13_1f
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin13d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14_1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14_2
         data_type: bigint
-      - name: fin14_2_china
-        data_type: varchar
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
+      - name: fin14_2_China
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14a1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin14c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: fin14c_2
         data_type: bigint
-      - name: fin14c_2_china
-        data_type: varchar
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
+      - name: fin14c_2_China
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin16
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin17a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin17a1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin17b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin20
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin22a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin22b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin22c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin24
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 9
       - name: fin24a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: fin24b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin26
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin27_1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin27c1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin27c2
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin28
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin29_1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin29c1
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin29c2
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin30
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin31a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin31b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin31b1
         data_type: bigint
-      - name: fin31b1_china
-        data_type: varchar
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
+      - name: fin31b1_China
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin31c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin32
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin33
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin34a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin34b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin34d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin34e
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin35
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin37
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin38
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin39a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin39b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin39d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin39e
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin42
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin42a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: fin43a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin43b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin43d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin43e
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: fin44a
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin44b
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin44c
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin44d
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin45
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: fin45_1
         data_type: bigint
-      - name: fin45_1_china
-        data_type: varchar
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
+      - name: fin45_1_China
+        data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: saved
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: borrowed
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: receive_wages
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: receive_transfers
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: receive_pension
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: receive_agriculture
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: pay_utilities
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
       - name: remittances
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 6
       - name: mobileowner
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: internetaccess
         data_type: bigint
+        data_tests:
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 4
       - name: anydigpayment
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: merchantpay_dig
         data_type: bigint
+        data_tests:
+          - accepted_values:
+              values: [0, 1]
       - name: year
         data_type: bigint
-      - name: gender
-        data_type: varchar
+        data_tests:
+          - accepted_values:
+              values: [2021, 2022]

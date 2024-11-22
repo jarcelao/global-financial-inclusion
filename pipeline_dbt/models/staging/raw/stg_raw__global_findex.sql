@@ -7,9 +7,27 @@ with source as (
 renamed as (
 
     select
-        * exclude (wpid_random, wgt, female),
-        case when female = 1 then 'female' when female = 2 then 'male' end
-            as gender
+        * exclude (
+            wpid_random,
+            fin10_1a,
+            fin10_1b,
+            fin10_1c,
+            fin10_1d,
+            fin10_1e,
+            fin14_2_china,
+            fin14c_2_china,
+            fin31b1_china,
+            fin45_1_china
+        ),
+        cast(fin10_1a as bigint) as fin10_1a,
+        cast(fin10_1b as bigint) as fin10_1b,
+        cast(fin10_1c as bigint) as fin10_1c,
+        cast(fin10_1d as bigint) as fin10_1d,
+        cast(fin10_1e as bigint) as fin10_1e,
+        cast(fin14_2_china as bigint) as fin14_2_china,
+        cast(fin14c_2_china as bigint) as fin14c_2_china,
+        cast(fin31b1_china as bigint) as fin31b1_china,
+        cast(fin45_1_china as bigint) as fin45_1_china
     from source
 
 )
