@@ -1,14 +1,14 @@
 Table dim_Respondent {
   respondent_id UUID pk
-  gender VARCHAR
-  age INTEGER
-  education VARCHAR
-  income_quintile VARCHAR
-  employed BOOLEAN
+  female BIGINT
+  age BIGINT
+  education BIGINT
+  income_quintile BIGINT
+  employed BIGINT
 }
 
 Table dim_Question {
-  question_id INTEGER pk
+  question_id UUID pk
   description VARCHAR
 }
 
@@ -17,7 +17,7 @@ Table dim_Economy {
   economy_code VARCHAR
   economy VARCHAR
   region VARCHAR
-  pop_adult VARCHAR
+  pop_adult BIGINT
 }
 
 Table fact_Response {
@@ -25,7 +25,7 @@ Table fact_Response {
   respondent_id UUID
   question_id UUID
   economy_id UUID
-  value VARCHAR
+  value BIGINT
 }
 
 
