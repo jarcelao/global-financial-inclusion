@@ -1,0 +1,35 @@
+models:
+  - name: int_surveys_pivoted_to_responses
+    description: "Regrained the dataset from per-survey to per-response."
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: economy
+        data_type: varchar
+      - name: economycode
+        data_type: varchar
+      - name: regionwb
+        data_type: varchar
+      - name: pop_adult
+        data_type: double
+      - name: wpid_random
+        data_type: bigint
+      - name: wgt
+        data_type: double
+      - name: female
+        data_type: bigint
+      - name: age
+        data_type: bigint
+      - name: educ
+        data_type: bigint
+      - name: inc_q
+        data_type: bigint
+      - name: emp_in
+        data_type: bigint
+      - name: urbanicity_f2f
+        data_type: bigint
+      - name: question
+        data_type: varchar
+      - name: response
+        data_type: bigint

@@ -6,9 +6,11 @@ with source as (
 
 renamed as (
 
+    -- DuckDB incorrectly inferred some variables in the dataset as VARCHARs.
+    -- Thus, we cast them to BIGINTs for consistency.
+
     select
         * exclude (
-            wpid_random,
             fin10_1a,
             fin10_1b,
             fin10_1c,

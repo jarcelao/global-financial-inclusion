@@ -17,6 +17,8 @@ models:
         data_type: varchar
       - name: pop_adult
         data_type: double
+      - name: wpid_random
+        data_type: bigint
       - name: wgt
         data_type: double
       - name: female

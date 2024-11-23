@@ -42,7 +42,7 @@ sources:
           - name: emp_in
             description: >
               Respondent is in workforce
-          - name: urbancity_f2f
+          - name: urbanicity_f2f
             description: >
               Respondent lives in rural area
           - name: account
