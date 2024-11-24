@@ -1,3 +1,6 @@
+-- We'll materialize this as a table as a workaround to ignore upstream errors from the csv
+{{ config(materialized='table') }}
+
 with findex_survey as (
 
     select * from {{ ref('stg_raw__global_findex') }}
@@ -17,7 +20,8 @@ on columns(* exclude (
     educ,
     inc_q,
     emp_in,
-    urbanicity_f2f
+    urbanicity_f2f,
+    year
 ))
 into
 name question

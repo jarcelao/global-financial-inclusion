@@ -29,6 +29,8 @@ models:
         data_type: bigint
       - name: urbanicity_f2f
         data_type: bigint
+      - name: year
+        data_type: bigint
       - name: question
         data_type: varchar
       - name: response
