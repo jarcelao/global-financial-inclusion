@@ -1,34 +1,35 @@
 Table dim_Respondent {
-  respondent_id UUID pk
+  wpid_random BIGINT pk
+  wgt DOUBLE
   female BIGINT
   age BIGINT
-  education BIGINT
-  income_quintile BIGINT
-  employed BIGINT
-}
-
-Table dim_Question {
-  question_id UUID pk
-  description VARCHAR
+  educ BIGINT
+  inc_q BIGINT
+  emp_in BIGINT
+  urbanicity_f2f BIGINT
 }
 
 Table dim_Economy {
-  economy_id UUID pk
-  economy_code VARCHAR
+  economycode VARCHAR pk
   economy VARCHAR
-  region VARCHAR
-  pop_adult BIGINT
+  regionwb VARCHAR
+  pop_adult DOUBLE
+}
+
+Table dim_Question {
+  question_id BIGINT
+  question VARCHAR
 }
 
 Table fact_Response {
-  response_id UUID pk
-  respondent_id UUID
-  question_id UUID
-  economy_id UUID
-  value BIGINT
+  respondent_id BIGINT
+  economy_id VARCHAR
+  question_id BIGINT
+  response BIGINT
+  year BIGINT
 }
 
 
-Ref: dim_Respondent.respondent_id < fact_Response.respondent_id
+Ref: dim_Respondent.wpid_random < fact_Response.respondent_id
 Ref: dim_Question.question_id < fact_Response.question_id
-Ref: dim_Economy.economy_id < fact_Response.economy_id
+Ref: dim_Economy.economycode < fact_Response.economy_id
