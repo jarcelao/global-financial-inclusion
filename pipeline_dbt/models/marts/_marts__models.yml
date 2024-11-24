@@ -1,0 +1,117 @@
+version: 2
+
+models:
+  - name: dim_economy
+    description: "Economy dimension table"
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: economycode
+        data_type: varchar
+        description: "Economy Code"
+
+      - name: economy
+        data_type: varchar
+        description: "Economy"
+
+      - name: regionwb
+        data_type: varchar
+        description: "Regional code"
+
+      - name: pop_adult
+        data_type: double
+        description: "Population 15+, 2020, WDI"
+
+  - name: dim_question
+    config:
+      contract:
+        enforced: true
+    description: "Question dimension table"
+    columns:
+      - name: question_id
+        data_type: bigint
+        description: "Unique identifier for a question"
+
+      - name: question
+        data_type: varchar
+        description: "Question code (e.g. fin37)"
+
+  - name: dim_respondent
+    config:
+      contract:
+        enforced: true
+    description: "Respondent dimension table"
+    columns:
+      - name: wpid_random
+        data_type: bigint
+        description: "Gallup World Poll identifier"
+
+      - name: wgt
+        data_type: double
+        description: "Weight"
+
+      - name: female
+        data_type: bigint
+        description: "Respondent is female"
+
+      - name: age
+        data_type: bigint
+        description: "Respondent age"
+
+      - name: educ
+        data_type: bigint
+        description: "Respondent education level"
+
+      - name: inc_q
+        data_type: bigint
+        description: "Within-economy household income quintile"
+
+      - name: emp_in
+        data_type: bigint
+        description: "Respondent is in workforce"
+
+      - name: urbanicity_f2f
+        data_type: bigint
+        description: "Respondent lives in rural area"
+
+  - name: fct_response
+    config:
+      contract:
+        enforced: true
+    description: "Response fact table"
+    columns:
+      - name: respondent_id
+        data_type: bigint
+        description: "Corresponds to wpid_random in dim_respondent"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_respondent')
+              field: wpid_random
+
+      - name: economy_id
+        data_type: varchar
+        description: "Corresponds to economycode in dim_economy"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_economy')
+              field: economycode
+
+      - name: question_id
+        data_type: bigint
+        description: "Corresponds to question_id in dim_question"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_question')
+              field: question_id
+
+      - name: response
+        data_type: bigint
+        description: "Individual response to the question"
+
+      - name: year
+        data_type: bigint
+        description: "Year the data was collected"

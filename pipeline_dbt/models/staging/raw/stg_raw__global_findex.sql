@@ -1,3 +1,6 @@
+-- We'll materialize this as a table as a workaround to ignore upstream errors from the csv
+{{ config(materialized='table') }}
+
 with source as (
 
     select * from {{ source('raw', 'micro_world_139countries') }}

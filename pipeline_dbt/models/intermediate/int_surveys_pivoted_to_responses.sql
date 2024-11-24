@@ -17,7 +17,8 @@ on columns(* exclude (
     educ,
     inc_q,
     emp_in,
-    urbanicity_f2f
+    urbanicity_f2f,
+    year
 ))
 into
 name question
