@@ -9,4 +9,5 @@ dependencies = [
     "pre-commit>=4.0.1",
     "ruff>=0.8.0",
     "sqlfluff-templater-dbt>=3.2.5",
+    "streamlit>=1.40.1",
 ]
