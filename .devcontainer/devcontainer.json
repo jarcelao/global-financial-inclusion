@@ -12,13 +12,14 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pipx install uv && uv sync",
+	"postCreateCommand": "pipx install uv && uv sync && uv run pre-commit install",
 
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"innoverio.vscode-dbt-power-user"
+				"innoverio.vscode-dbt-power-user",
+				"charliermarsh.ruff"
 			]
 		}
 	}
