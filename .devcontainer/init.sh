@@ -8,3 +8,6 @@ uv run pre-commit install
 
 cd pipeline_dbt
 uv run dbt deps
+
+cd ../dashboard_evidence
+npm i

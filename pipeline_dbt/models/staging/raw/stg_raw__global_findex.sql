@@ -1,4 +1,5 @@
--- We'll materialize this as a table as a workaround to ignore upstream errors from the csv
+-- We'll materialize this as a table as a workaround to
+-- ignore upstream errors from the csv
 {{ config(materialized='table') }}
 
 with source as (
