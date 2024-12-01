@@ -23,20 +23,6 @@ models:
         data_type: double
         description: "Population 15+, 2020, WDI"
 
-  - name: dim_question
-    config:
-      contract:
-        enforced: true
-    description: "Question dimension table"
-    columns:
-      - name: question_id
-        data_type: bigint
-        description: "Unique identifier for a question"
-
-      - name: question
-        data_type: varchar
-        description: "Question code (e.g. fin37)"
-
   - name: dim_respondent
     config:
       contract:
@@ -99,14 +85,11 @@ models:
               to: ref('dim_economy')
               field: economycode
 
-      - name: question_id
-        data_type: bigint
-        description: "Corresponds to question_id in dim_question"
+      - name: question
+        data_type: varchar
+        description: "Question ID as specified in the codebook"
         data_tests:
           - not_null
-          - relationships:
-              to: ref('dim_question')
-              field: question_id
 
       - name: response
         data_type: bigint

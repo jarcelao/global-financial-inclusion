@@ -16,20 +16,13 @@ Table dim_Economy {
   pop_adult DOUBLE
 }
 
-Table dim_Question {
-  question_id BIGINT
-  question VARCHAR
-}
-
 Table fact_Response {
   respondent_id BIGINT
   economy_id VARCHAR
-  question_id BIGINT
+  question VARCHAR
   response BIGINT
   year BIGINT
 }
 
-
 Ref: dim_Respondent.wpid_random < fact_Response.respondent_id
-Ref: dim_Question.question_id < fact_Response.question_id
 Ref: dim_Economy.economycode < fact_Response.economy_id
