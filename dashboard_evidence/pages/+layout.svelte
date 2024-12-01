@@ -6,7 +6,7 @@
 </script>
 
 <EvidenceDefaultLayout
-    title='🌐 Global Financial Inclusion 2021 Dashboard'
+    title='🌐 Global Financial Inclusion 2021'
     githubRepo='https://github.com/jarcelao/global-financial-inclusion'
     {data}
 >
