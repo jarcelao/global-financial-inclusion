@@ -108,14 +108,14 @@ group by e.regionwb, rt.female
 ```sql no_account_reasons
 select
     case
-        when question = 'fin11a' then 'too far'
-        when question = 'fin11b' then 'too expensive'
-        when question = 'fin11c' then 'lack documentation'
-        when question = 'fin11d' then 'lack trust'
-        when question = 'fin11e' then 'religious reasons'
-        when question = 'fin11f' then 'lack money'
-        when question = 'fin11g' then 'family member already has one'
-        when question = 'fin11h' then 'no need for financial services'
+        when question = 'fin11a' then 'Too far'
+        when question = 'fin11b' then 'Too expensive'
+        when question = 'fin11c' then 'Lack documentation'
+        when question = 'fin11d' then 'Lack trust'
+        when question = 'fin11e' then 'Religious reasons'
+        when question = 'fin11f' then 'Lack money'
+        when question = 'fin11g' then 'Family member already has one'
+        when question = 'fin11h' then 'No need for financial services'
     end as name,
     sum(response) as value
 from global_findex.fct_response
@@ -227,5 +227,72 @@ group by re.question, e.regionwb
 />
 
 ## 💳 Borrowing and Saving
+
+```sql borrowing_means
+select
+    e.regionwb as region,
+    case
+        when re.question = 'fin22a' then 'Borrowed from a financial institution'
+        when re.question = 'fin22b' then 'Borrowed from family or friends'
+        when re.question = 'fin22c' then 'Borrowed from an informal savings club'
+    end as question,
+    sum(re.response) as sum
+from global_findex.fct_response re
+join global_findex.dim_economy e on re.economy_id = e.economycode
+where
+    re.question in ('fin22a', 'fin22b', 'fin22c')
+    and re.response = 1
+    and e.regionwb is not null
+group by re.question, e.regionwb
+```
+
+```sql saving_means
+select
+    case
+        when question = 'fin17a' then 'Saved using an account at a financial institution'
+        when question = 'fin17a1' then 'Saved using a mobile money account'
+        when question = 'fin17b' then 'Saved using an informal savings club'
+    end as name,
+    sum(response) as value
+from global_findex.fct_response
+where question in (
+    'fin17a',
+    'fin17a1',
+    'fin17b',
+) and response = 1
+group by question
+```
+
+<BarChart
+    title='Means of Borrowing'
+    data={borrowing_means}
+    x=region
+    y=sum
+    yAxisTitle='Has an Account'
+    series=question
+    type=grouped
+    swapXY=true
+/>
+
+<ECharts
+    config={
+        {
+            title: {
+                text: 'Sources of Savings',
+                left: 'left'
+            },
+            tooltip: {
+                formatter: '{b}: {c} ({d}%)'
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: ['40%', '70%'],
+                    data: [...saving_means],
+                }
+            ]
+        }
+    }
+/>
 
 ## 👥 Demographic Insights
