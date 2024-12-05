@@ -2,7 +2,7 @@
 type: duckdb
 name: global_findex
 options:
-  filename: ../../../data/warehouse.duckdb
+  filename: ../../../../data/warehouse.duckdb
 # Advanced Options, you probably don't want to change this
 buildOptions:
   batchSize: 1000000

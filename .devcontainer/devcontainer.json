@@ -18,7 +18,6 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"innoverio.vscode-dbt-power-user",
 				"ms-python.python",
 				"Evidence.evidence-vscode"
 			]

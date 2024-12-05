@@ -2,11 +2,13 @@
 
 set -e
 
+pipx install pre-commit
+pre-commit install
+
+cd src/pipeline_dbt
+
 pipx install uv
 uv sync
-uv run pre-commit install
-
-cd pipeline_dbt
 uv run dbt deps
 
 cd ../dashboard_evidence
