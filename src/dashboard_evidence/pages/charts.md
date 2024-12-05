@@ -296,3 +296,65 @@ group by question
 />
 
 ## 👥 Demographic Insights
+
+```sql account_ownership_demographics
+select
+    sum(re.response) / count(re.response) as pct,
+    case
+        when rt.educ = 1 then 'Completed primary school or less'
+        when rt.educ = 2 then 'Completed secondary school'
+        when rt.educ = 3 then 'Completed tertiary education or more'
+    end as educ_label,
+    rt.educ,
+    case
+        when rt.inc_q = 1 then 'Poorest 20%'
+        when rt.inc_q = 2 then 'Second 20%'
+        when rt.inc_q = 3 then 'Middle 20%'
+        when rt.inc_q = 4 then 'Fourth 20%'
+        when rt.inc_q = 5 then 'Richest 20%'
+    end as inc_q_label,
+    rt.inc_q
+from global_findex.fct_response re
+join global_findex.dim_respondent rt on re.respondent_id = rt.wpid_random
+where re.question = 'account' and rt.educ in (1, 2, 3)
+group by rt.educ, rt.inc_q
+```
+
+```sql account_ownership_income
+select
+    sum(re.response) / count(re.response) as pct,
+    case
+        when rt.inc_q = 1 then 'Poorest 20%'
+        when rt.inc_q = 2 then 'Second 20%'
+        when rt.inc_q = 3 then 'Middle 20%'
+        when rt.inc_q = 4 then 'Fourth 20%'
+        when rt.inc_q = 5 then 'Richest 20%'
+    end as inc_q
+from global_findex.fct_response re
+join global_findex.dim_respondent rt on re.respondent_id = rt.wpid_random
+where re.question = 'account'
+group by rt.inc_q
+```
+
+<Heatmap
+    title='Account Ownership by Income and Education'
+    data={account_ownership_demographics}
+    x=educ_label
+    xAxisTitle='Education Level'
+    xSort=educ
+    y=inc_q_label
+    yAxisTitle='Income Quintile'
+    ySort=inc_q
+    value=pct
+/>
+
+<BarChart
+    title='Account Ownership by Income'
+    data={account_ownership_income}
+    x=inc_q
+    xAxisTitle='Income Quintile'
+    y=pct
+    yAxisTitle='Account Ownership'
+    yFmt=pct2
+    labels=true
+/>
