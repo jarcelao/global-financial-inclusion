@@ -6,7 +6,7 @@ Built with [Evidence](https://evidence.dev/), [DuckDB](https://duckdb.org/), and
 
 ## Getting Started
 
-For local setup instructions, refer to `docs/setup.md`.
+For local setup instructions, refer to [docs/setup.md](docs/setup.md).
 
 ## Data Source
 
