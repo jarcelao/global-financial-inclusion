@@ -45,4 +45,4 @@ npm i
 
 After setting up, you can run the data pipeline to extract and transform the raw data. Refer to [pipeline.md](pipeline.md) for this process.
 
-When the data has been processed, you can now open the included dashboard or use the data warehouse for your own analyses. Refer to [data.md] for more information.
+When the data has been processed, you can now open the included dashboard or use the data warehouse for your own analyses. Refer to [data.md](data.md) for more information.

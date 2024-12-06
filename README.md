@@ -1,5 +1,7 @@
 # 🌐 Global Financial Inclusion 2021
 
+https://findex21.pages.dev/
+
 Data pipeline and static dashboard containing insghts for the World Bank's Global Financial Inclusion Survey for 2021.
 
 Built with [Evidence](https://evidence.dev/), [DuckDB](https://duckdb.org/), and [dbt](https://www.getdbt.com/).
