@@ -1,9 +1,9 @@
 ---
-title: 🌐 Global Financial Inclusion 2021 Insights
+title: 🌐 Global Financial Inclusion 2021 Dashboard
 description: Interactive dashboard for the World Bank's Global Financial Inclusion (Findex) Survey for 2021
 ---
 
-Welcome! This site is dedicated to showing an overview of insights from the World Bank's Global Financial Inclusion (Findex) Survey held last 2021.
+Welcome! This site is dedicated to a dashboard for the World Bank's Global Financial Inclusion (Findex) Survey held last 2021.
 
 ## Data Source
 
