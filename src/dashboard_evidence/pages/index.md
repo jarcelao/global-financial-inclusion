@@ -23,3 +23,5 @@ Demirgüç-Kunt, Asli, Leora Klapper, Dorothe Singer, Saniya Ansar. 2022. The Gl
 
 ## Credits
 This site is [open-source](https://github.com/jarcelao/global-financial-inclusion) and licensed under the MIT License. Built with [Evidence](https://evidence.dev/), [DuckDB](https://duckdb.org/), and [dbt](https://www.getdbt.com/).
+
+The project is submitted as part of DEP for Good, a collaboration between [Code.Sydney](https://www.linkedin.com/company/code.sydney) and [Data Engineering Pilipinas](https://dataengineering.ph/). [Check out the project site here](https://www.datamentors.au/portfolios)!
